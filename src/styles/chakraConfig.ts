@@ -2,7 +2,7 @@ import { theme as ChakraTheme, extendTheme } from '@chakra-ui/react';
 
 // ------------- This is a global theme for Chakra-ui (https://chakra-ui.com/docs/styled-system/customize-theme) -------------
 
-// Define custom colors here
+// Define custom colors here:
 const colors = {
 	brand: {
 		main: '#000000',
@@ -16,7 +16,7 @@ const colors = {
 
 const appTheme = extendTheme({
 	colors,
-	// Handle global styles:
+	// Handle global styles here:
 	styles: {
 		global: {
 			body: {
@@ -24,12 +24,12 @@ const appTheme = extendTheme({
 			},
 		},
 	},
-	// Add any custom fonts here
+	// Add any custom fonts here:
 	fonts: {
 		...ChakraTheme.fonts,
 	},
 
-	// Add any extended component styles here
+	// Add any extended component styles here:
 	components: {
 		Button: {
 			baseStyle: {
