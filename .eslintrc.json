@@ -14,7 +14,6 @@
 	},
 	"plugins": ["react"],
 	"rules": {
-		"no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
 		"react/react-in-jsx-scope": "off",
 		"quotes": [2, "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
 		"no-irregular-whitespace": 0,

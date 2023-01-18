@@ -1,6 +1,6 @@
 import { theme as ChakraTheme, extendTheme } from '@chakra-ui/react';
 
-// ------------- This is a global theme for chakra-ui (https://chakra-ui.com/docs/styled-system/customize-theme) -------------
+// ------------- This is a global theme for Chakra-ui (https://chakra-ui.com/docs/styled-system/customize-theme) -------------
 
 // Define custom colors here
 const colors = {
@@ -14,21 +14,23 @@ const colors = {
 	},
 };
 
-// TODO: this needs to have a template for dark mode and light mode as well
 const appTheme = extendTheme({
 	colors,
 	// Handle global styles:
 	styles: {
 		global: {
 			body: {
-				bg: '',
+				bg: '#212121',
 			},
 		},
 	},
-	// TODO: add a custom font here
+	// Add any custom fonts here
 	fonts: {
 		...ChakraTheme.fonts,
 	},
+
+	// Add any extended component styles here
+	components: {},
 });
 
 export default appTheme;
