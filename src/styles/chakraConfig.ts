@@ -6,7 +6,7 @@ import { theme as ChakraTheme, extendTheme } from '@chakra-ui/react';
 const colors = {
 	brand: {
 		main: '#000000',
-		hoverMain: '#323232',
+		hoverMain: '#222222',
 		lightGrey: '#E0E0E0',
 		secondaryGrey: '#C5C5C5',
 		white: '#ffffff',
@@ -20,7 +20,7 @@ const appTheme = extendTheme({
 	styles: {
 		global: {
 			body: {
-				bg: '#212121',
+				bg: '#222222',
 			},
 		},
 	},
@@ -30,7 +30,15 @@ const appTheme = extendTheme({
 	},
 
 	// Add any extended component styles here
-	components: {},
+	components: {
+		Button: {
+			baseStyle: {
+				_focus: {
+					boxShadow: '0 0 0 4px #E0E0E090',
+				},
+			},
+		},
+	},
 });
 
 export default appTheme;
