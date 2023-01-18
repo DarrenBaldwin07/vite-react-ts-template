@@ -7,3 +7,5 @@
 <div align='center'>
     <a href='https://cincinnati.ventures/' target='_blank'>cincinnati.ventures</a>
 </div>
+
+> Note: this template is the scaffold for the frontend foundation of our framework (cv-framework/Rapid)
