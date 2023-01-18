@@ -8,7 +8,9 @@ import {
 	VStack,
 	Text,
 	Flex,
-  Link as ChakraLink
+	Link as ChakraLink,
+	HStack,
+	Tooltip
 } from '@chakra-ui/react';
 import CinciLogo from '../assets/CincinnatiVenturesRounded.png';
 import { create } from 'zustand';
@@ -27,7 +29,7 @@ export const useStore = create<Counter>((set) => ({
 	resetCount: () => set({ count: 0 }),
 }));
 
-const Welcome = () => {
+const Welcome: React.FC = () => {
 	const { count, increaseCount } = useStore();
 	return (
 		<Box
@@ -63,18 +65,66 @@ const Welcome = () => {
 							w={400}
 							textAlign='center'
 						>
-							A template for creating <Text as='span' fontWeight='bold'><ChakraLink href='https://cincinnati.ventures' target='_blank'>Cincinnati Ventures</ChakraLink></Text> {' '}
+							A template for building <Text as='span' fontWeight='bold'><ChakraLink href='https://cincinnati.ventures' target='_blank'>Cincinnati Ventures</ChakraLink></Text> {' '}
 							client-rendered frontends!
 						</Text>
 					</Flex>
-          <Flex direction='column' align='center' gap={4}>
-            <Button rounded='xl' onClick={() => increaseCount(1)}>
-              Count: {count}
-            </Button>
-            <Text color='brand.lightGrey'>
-              Edit src/index.tsx and save to test HMR ⚡️
-            </Text>
-          </Flex>
+					<Flex
+						gap={2}
+						align='center'
+						border='1px solid #E0E0E0'
+						bg='white'
+						borderRadius='12px'
+						p={2}
+						_hover={{cursor: 'default'}}
+					>
+						<HStack spacing={6}>
+							<Tooltip
+								label='Chakra UI (CSS framework)'
+								placement='top'
+								bg='brand.main'
+								borderRadius='10px'
+							>
+								<ChakraLink href='https://chakra-ui.com/' target='_blank'>
+									<Image rounded='xl' w={10} h={10} alt='Chakra UI' src='https://opencollective.com/chakra-ui/organization/0/avatar.svg?avatarHeight=130' />
+								</ChakraLink>
+							</Tooltip>
+							<Tooltip
+								label='React Router (Application router)'
+								placement='top'
+								bg='brand.main'
+								borderRadius='10px'
+							>
+								<ChakraLink href='https://reactrouter.com/en/main' target='_blank'>
+									<Image rounded='xl' w={10} h={10} alt='React Router' src='https://storage.googleapis.com/cv-framework/reactRouter.svg' />
+								</ChakraLink>
+							</Tooltip>
+							<Tooltip
+								label='React Query (Data fetching'
+								placement='top'
+								bg='brand.main'
+								borderRadius='10px'
+							>
+								<ChakraLink href='https://tanstack.com/query/latest' target='_blank'>
+									<Image rounded='xl' w={10} h={10} alt='React Query' src='https://storage.googleapis.com/cv-framework/reactQuery.svg' />
+								</ChakraLink>
+							</Tooltip>
+							<Tooltip
+								label='Zustand (State management)'
+								placement='top'
+								bg='brand.main'
+								borderRadius='10px'
+							>
+								<ChakraLink href='https://docs.pmnd.rs/zustand' target='_blank'>
+									<Image rounded='xl' w={12} h={10} alt='Zustand' src='https://storage.googleapis.com/cv-framework/zustand.png' />
+								</ChakraLink>
+							</Tooltip>
+						</HStack>
+					</Flex>
+					<Flex direction='column' align='center' gap={4}>
+						<Button rounded='xl' onClick={() => increaseCount(1)}>Count: {count}</Button>
+						<Text color='brand.lightGrey'>Edit src/index.tsx and save to test HMR ⚡️</Text>
+					</Flex>
 				</VStack>
 			</Center>
 		</Box>
