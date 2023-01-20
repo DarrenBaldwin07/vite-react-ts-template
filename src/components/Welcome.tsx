@@ -72,8 +72,6 @@ const Welcome: React.FC = () => {
 					<Flex
 						gap={2}
 						align='center'
-						border='1px solid #E0E0E0'
-						bg='white'
 						borderRadius='12px'
 						p={2}
 						_hover={{cursor: 'default'}}

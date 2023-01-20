@@ -9,3 +9,9 @@
 </div>
 
 > Note: this template is a scaffold for the frontend foundation of our framework (cv-framework/Rapid)
+
+
+<a href='https://app.netlify.com/start/deploy?repository=https://github.com/Cincinnati-Ventures/vite-react-ts-template'>
+    <img src='https://www.netlify.com/img/deploy/button.svg' alt='Deploy To Netlify' >
+</a>
+
