@@ -13,21 +13,9 @@ import {
 	Tooltip
 } from '@chakra-ui/react';
 import CinciLogo from '../assets/CincinnatiVenturesRounded.png';
-import { create } from 'zustand';
 import { motion } from 'framer-motion';
+import { useStore } from '../stores';
 
-interface Counter {
-	count: number;
-	increaseCount: (by: number) => void;
-	resetCount: () => void;
-}
-
-export const useStore = create<Counter>((set) => ({
-	count: 0,
-	increaseCount: (by: number) =>
-		set((state) => ({ count: state.count + by })),
-	resetCount: () => set({ count: 0 }),
-}));
 
 const Welcome: React.FC = () => {
 	const { count, increaseCount } = useStore();
