@@ -1,39 +1,16 @@
 import React from 'react';
-import {
-	Box,
-	Button,
-	Image,
-	Center,
-	Heading,
-	VStack,
-	Text,
-	Flex,
-	Link as ChakraLink,
-	HStack,
-	Tooltip
-} from '@chakra-ui/react';
 import CinciLogo from '../assets/CincinnatiVenturesRounded.png';
 import { motion } from 'framer-motion';
 import { useStore } from '../stores';
+import { Button, Heading, VStack, Tooltip } from '@rapid-web/ui';
 
 
 const Welcome: React.FC = () => {
 	const { count, increaseCount } = useStore();
 	return (
-		<Box
-			position='fixed'
-			top='50%'
-			left='50%'
-			transform='translate(-50%, -50%)'
-		>
-			<Center>
-				<VStack
-					spacing={12}
-					direction='column'
-					align='center'
-					justify='center'
-					gap={2}
-				>
+		<div className='fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+			<div className='flex flex-col items-center justify-center'>
+				<VStack spacing='lg' styles='items-center'>
 					<motion.div
 						animate={{ rotate: 360 }}
 						transition={{
@@ -42,78 +19,27 @@ const Welcome: React.FC = () => {
 							duration: 1,
 						}}
 					>
-						<Image src={CinciLogo} alt='Cincinnati Ventures' />
+						<img src={CinciLogo} alt='Cincinnati Ventures' />
 					</motion.div>
-					<Flex direction='column' align='center' gap={2}>
-						<Heading color='white'>
-							<Text as='span'	bgGradient='linear(to-l, #BD33FE, #6CB1FF)' bgClip='text'>Vite</Text> + <Text as='span' bgClip='text' bgGradient='linear(to-l, #A1E8FB, #61DAFB)' >React</Text>
-						</Heading>
-						<Text
-							color='brand.lightGrey'
-							w={400}
-							textAlign='center'
-						>
-							A template for building <Text as='span' fontWeight='bold'><ChakraLink href='https://cincinnati.ventures' target='_blank'>Cincinnati Ventures</ChakraLink></Text> {' '}
-							client-rendered frontends!
-						</Text>
-					</Flex>
-					<Flex
-						gap={2}
-						align='center'
-						borderRadius='12px'
-						p={2}
-						_hover={{cursor: 'default'}}
-					>
-						<HStack spacing={6}>
-							<Tooltip
-								label='Chakra UI (CSS framework)'
-								placement='top'
-								bg='brand.main'
-								borderRadius='10px'
-							>
-								<ChakraLink href='https://chakra-ui.com/' target='_blank'>
-									<Image rounded='xl' w={10} h={10} alt='Chakra UI' src='https://opencollective.com/chakra-ui/organization/0/avatar.svg?avatarHeight=130' />
-								</ChakraLink>
-							</Tooltip>
-							<Tooltip
-								label='React Router (Application router)'
-								placement='top'
-								bg='brand.main'
-								borderRadius='10px'
-							>
-								<ChakraLink href='https://reactrouter.com/en/main' target='_blank'>
-									<Image rounded='xl' w={10} h={10} alt='React Router' src='https://storage.googleapis.com/cv-framework/reactRouter.svg' />
-								</ChakraLink>
-							</Tooltip>
-							<Tooltip
-								label='React Query (Data fetching'
-								placement='top'
-								bg='brand.main'
-								borderRadius='10px'
-							>
-								<ChakraLink href='https://tanstack.com/query/latest' target='_blank'>
-									<Image rounded='xl' w={10} h={10} alt='React Query' src='https://storage.googleapis.com/cv-framework/reactQuery.svg' />
-								</ChakraLink>
-							</Tooltip>
-							<Tooltip
-								label='Zustand (State management)'
-								placement='top'
-								bg='brand.main'
-								borderRadius='10px'
-							>
-								<ChakraLink href='https://docs.pmnd.rs/zustand' target='_blank'>
-									<Image rounded='xl' w={12} h={10} alt='Zustand' src='https://storage.googleapis.com/cv-framework/zustand.png' />
-								</ChakraLink>
-							</Tooltip>
-						</HStack>
-					</Flex>
-					<Flex direction='column' align='center' gap={4}>
-						<Button rounded='xl' onClick={() => increaseCount(1)}>Count: {count}</Button>
-						<Text color='brand.lightGrey'>Edit src/index.tsx and save to test HMR ⚡️</Text>
-					</Flex>
+					<Heading styles='mt-12 font-bold text-white'>{count}</Heading>
+					<div className='flex space-x-6 items-center mt-12'>
+						<Tooltip label='Rapid UI'>
+							<img width={56} height={56} alt='Rapid UI' src='https://storage.googleapis.com/cv-framework/rapidUIlogo.svg' />
+						</Tooltip>
+						<Tooltip label='React Router'>
+							<img width={56} height={56} alt='React Router' src='https://storage.googleapis.com/cv-framework/reactRouter.svg' />
+						</Tooltip>
+						<Tooltip label='React Query'>
+							<img width={56} height={56} alt='React Query' src='https://storage.googleapis.com/cv-framework/reactQuery.svg' />
+						</Tooltip>
+						<Tooltip label='Zustand'>
+							<img width={56} height={56} alt='Zustand' src='https://storage.googleapis.com/cv-framework/zustand.png' />
+						</Tooltip>
+					</div>
+					<Button styles='mt-12' onClick={() => increaseCount(1)}>Increase Count</Button>
 				</VStack>
-			</Center>
-		</Box>
+			</div>
+		</div>
 	);
 };
 
