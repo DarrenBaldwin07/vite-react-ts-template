@@ -22,18 +22,18 @@ const Welcome: React.FC = () => {
 						<img src={CinciLogo} alt='Cincinnati Ventures' />
 					</motion.div>
 					<Heading styles='mt-12 font-bold text-white'>{count}</Heading>
-					<div className='flex space-x-6 items-center mt-12'>
+					<div className='flex items-center mt-12'>
 						<Tooltip label='Rapid UI'>
-							<img width={56} height={56} alt='Rapid UI' src='https://storage.googleapis.com/cv-framework/rapidUIlogo.svg' />
+							<img className='mr-4' width={56} height={56} alt='Rapid UI' src='https://storage.googleapis.com/cv-framework/rapidUIlogo.svg' />
 						</Tooltip>
 						<Tooltip label='React Router'>
-							<img width={56} height={56} alt='React Router' src='https://storage.googleapis.com/cv-framework/reactRouter.svg' />
+							<img className='mr-4' width={56} height={56} alt='React Router' src='https://storage.googleapis.com/cv-framework/reactRouter.svg' />
 						</Tooltip>
 						<Tooltip label='React Query'>
-							<img width={56} height={56} alt='React Query' src='https://storage.googleapis.com/cv-framework/reactQuery.svg' />
+							<img className='mr-4' width={56} height={56} alt='React Query' src='https://storage.googleapis.com/cv-framework/reactQuery.svg' />
 						</Tooltip>
 						<Tooltip label='Zustand'>
-							<img width={56} height={56} alt='Zustand' src='https://storage.googleapis.com/cv-framework/zustand.png' />
+							<img className='mr-4' width={56} height={56} alt='Zustand' src='https://storage.googleapis.com/cv-framework/zustand.png' />
 						</Tooltip>
 					</div>
 					<Button styles='mt-12' onClick={() => increaseCount(1)}>Increase Count</Button>
