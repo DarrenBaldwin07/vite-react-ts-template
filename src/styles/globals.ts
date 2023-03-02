@@ -1,6 +1,6 @@
 
 // ----------- Handle all applications global styles here -----------
-const globalStyles = {
+export const globalStyles = {
     global: {
         body: {
             backgroundColor: '#222222',
@@ -8,4 +8,3 @@ const globalStyles = {
     },
 };
 
-module.exports = { globalStyles };
